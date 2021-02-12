@@ -46,12 +46,8 @@ const Transaction = {
 
     incomes() {
         let income = 0;
-        // pegar todas as transações 
-        // para cada transação,
         Transaction.all.forEach(transaction => {
-            //se for maior que zero
             if (transaction.amount > 0) {
-                // somar a uma variavel e retornar a variavel
                 income += transaction.amount;
             }
         })
@@ -60,12 +56,8 @@ const Transaction = {
 
     expenses() {
         let expense = 0;
-        // pegar todas as transações 
-        // para cada transação,
         Transaction.all.forEach(transaction => {
-            //se for menor que zero
             if (transaction.amount < 0) {
-                // somar a uma variavel e retornar a variavel
                 expense += transaction.amount;
             }
         })
@@ -125,7 +117,6 @@ const DOM = {
 const Utils = {
     formatAmount(value) {
         value = Number(value.replace(/\,\./g, "")) * 100
-                       // Number(value) * 100 também serviria
         return value
     },
 
@@ -198,17 +189,11 @@ const Form = {
         event.preventDefault()
 
         try {
-            //verificar se todas as informações foram preenchidas
             Form.validateField()
-            //formatar os dados para salvar
             const transaction = Form.FormatValues()
-            //salvar
             Transaction.add(transaction)
-            //apagar os dados do formulário
             Form.clearFields()
-            //modal feche
             Modal.close()
-            //atualizar a aplicação (já tem no transaction.add)
         } catch (error) {
             alert(error.message)
         } 
