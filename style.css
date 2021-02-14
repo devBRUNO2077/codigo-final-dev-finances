@@ -6,7 +6,7 @@
     --red: #e92929;
     --white: #ececec;
     --purple: #5d2a75;
-    --ligth-purple: #9744be 
+    --ligth-purple: #9744be;
 
 }
 * {
@@ -120,6 +120,15 @@ button:hover {
 
 .button.reset:hover {
     opacity: 1;
+}
+
+#btedit {
+    cursor: pointer;
+}
+
+#btremove {
+    cursor: pointer;
+
 }
 
 /*header ===============================*/
@@ -310,7 +319,7 @@ input {
 footer{
     text-align: center;
     padding: 4rem 0 2rem;
-    color: var(--dark-blue);
+    color: var(--white);
 
     opacity: 0.6;
 }

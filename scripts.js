@@ -44,6 +44,24 @@ const Transaction = {
         App.reload()
     },
 
+    edit(index, transaction) {
+        Modal.open();
+
+        const descriptionText = Transaction.all[index].description;
+        const amountText = Transaction.all[index].amount;
+        const dateText = Transaction.all[index].date;
+
+        document.getElementById("description").value = descriptionText;
+        document.getElementById("amount").value = Utils.reformatAmount(amountText);
+        document.getElementById("date").value = Utils.reformatDate(dateText);
+
+        var el = document.getElementById("btsave");
+
+         el.onclick = function () {
+         Transaction.all.splice(index, 1);
+         }
+    },
+
     incomes() {
         let income = 0;
         Transaction.all.forEach(transaction => {
@@ -90,7 +108,10 @@ const DOM = {
             <td class="${CSSclass}">${amount}</td>
             <td class="date">${transaction.date}</td>
             <td>
-                <img onclick="Transaction.remove(${index})" src="./assets/minus.svg" alt="Remover transação">
+                <img onclick="Transaction.remove(${index})" id="btremove" src="./assets/minus.svg" alt="Remover transação">
+            </td>
+            <td>
+                <img onclick='Transaction.edit(${index})' id="btedit" src="./assets/edit.svg" alt="Editar transação"></i>
             </td>
         `
 
@@ -117,13 +138,23 @@ const DOM = {
 const Utils = {
     formatAmount(value) {
         value = Number(value.replace(/\,\./g, "")) * 100
-        return value
+        return Math.round(value)
     },
+
+    reformatAmount(amountText) {
+        amountText = Number(amountText) / 100;
+        return Math.round(amountText);
+      },
 
     formatDate(date) {
         const splitedDate = date.split("-")
-        return `${splitedDate[2]}/${splitedDate[1]}/${splitedDate[1]}`
+        return `${splitedDate[2]}/${splitedDate[1]}/${splitedDate[0]}`
     },
+
+    reformatDate(dateText) {
+        const splittedDate = dateText.split("/");
+        return `${splittedDate[2]}-${splittedDate[1]}-${splittedDate[0]}`;
+      },
 
     formatCurrency(value) {
         const signal = Number(value) < 0 ? "-" : ""
@@ -177,7 +208,6 @@ const Form = {
             date
         }
     },
-
 
     clearFields() {
         Form.description.value = ""
