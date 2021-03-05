@@ -13,7 +13,7 @@ Este projeto foi construído durante a Maratona Discover elaborada Pela Rocketse
 
 ## Editando uma transação
 
-<div align="center"><img  width="100%" src="">https://j.gifs.com/xnQVjq.gif</div>
+<div align="center"><img  width="100%" src="https://j.gifs.com/xnQVjq.gif"></div>
 
 ## Tecnologias
 
