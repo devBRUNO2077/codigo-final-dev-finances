@@ -5,7 +5,7 @@
 
 O Dev Finance$ é uma aplicação de controle financeiro na qual é possível cadastrar e excluir transações, atualizando os saldos de entrada e saída.
 
-Este projeto foi construído durante a Maratona Discover elaborada Pela Rocketseat em janeiro de 2021. Utilizando
+Este projeto foi construído durante a Maratona Discover elaborada Pela Rocketseat em janeiro de 2021.
 
 ## Adicionando uma transação
 
@@ -17,7 +17,7 @@ Este projeto foi construído durante a Maratona Discover elaborada Pela Rocketse
 
 ## Tecnologias
 
-Esse projeto foi desenvolvido utilizando as seguintes tecnologias:
+As tecnologias utilizadas no desenvolvimento do projeto foram:
 
 - HTML
 - CSS
