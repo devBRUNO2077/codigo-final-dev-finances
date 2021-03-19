@@ -25,7 +25,7 @@ As tecnologias utilizadas no desenvolvimento do projeto foram:
 
 ## Alterações pós-maratona
 
-Além das alterações nas cores do layout, foram implementadas as funções de limpar os dados preenchidos e e editar transações já inseridas.
+Além das alterações nas cores do layout, foram implementadas as funções de limpar os dados preenchidos e editar transações já inseridas.
 
 
 
